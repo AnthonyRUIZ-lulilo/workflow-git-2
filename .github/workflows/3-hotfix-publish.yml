@@ -32,7 +32,7 @@ jobs:
           VERSION="v${VERSION_NO_V}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "version_no_v=$VERSION_NO_V" >> $GITHUB_OUTPUT
-          echo "New hotfix version: $VERSION"
+          echo "Hotfix version: $VERSION"
 
       - name: Extract CHANGELOG for this version
         id: changelog
