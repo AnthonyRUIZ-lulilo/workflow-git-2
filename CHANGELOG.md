@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/compare/v1.2.0...v1.2.1) (2025-11-03)
+
+
+### 🐛 Fixes
+
+* **global:** Modif faute sur les html ([bdab49b](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/commit/bdab49b280171ade6ab7ad27f7bea4ffd27f7521))
+* **global:** Modif faute sur les html ([a434fd3](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/commit/a434fd31ed7670d0f0695f4d07934aef29612dcf))
+
 ## [1.2.0](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/compare/v1.1.0...v1.2.0) (2025-11-03)
 
 
