@@ -79,6 +79,33 @@ jobs:
 
             console.log(`Hotfix release ${version} created successfully`);
 
+      - name: Update PR label (if from release-please)
+        uses: actions/github-script@v7
+        continue-on-error: true
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+
+            // Note: Les hotfix n'ont généralement pas de label autorelease
+            // mais au cas où, on essaie de le mettre à jour
+            try {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                name: 'autorelease: pending'
+              });
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                labels: ['autorelease: tagged']
+              });
+              console.log('✅ Updated labels for hotfix PR');
+            } catch (error) {
+              console.log('ℹ️ No autorelease labels to update (normal for hotfix)');
+            }
+
   backmerge:
     name: Back-merge main to develop
     needs: create-release
