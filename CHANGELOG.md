@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/compare/v1.2.1...v1.2.2) (2025-11-03)
+
+
+### 🐛 Fixes
+
+* **test:** Modif d'une faute de frappe ([0a4037e](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/commit/0a4037ebdf7cfeb3207bb8b20bf58c872b4b5170))
+
 ## [1.2.1](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/compare/v1.2.0...v1.2.1) (2025-11-03)
 
 
