@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/compare/v1.1.0...v1.2.0) (2025-11-03)
+
+
+### 🚀 Features
+
+* **global:** Modif nom et fonctionnement hotfix ([aabcf04](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/commit/aabcf04c7d0af3591118d1cae515ab475dc54bbf))
+
 ## [1.1.0](https://github.com/AnthonyRUIZ-lulilo/workflow-git-2/compare/v1.0.0...v1.1.0) (2025-11-03)
 
 
