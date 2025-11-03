@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   create-release:
@@ -75,3 +76,36 @@ jobs:
             });
 
             console.log(`Release ${version} created successfully`);
+
+      - name: Update PR label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+
+            try {
+              // Retirer le label "autorelease: pending"
+              try {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  name: 'autorelease: pending'
+                });
+                console.log('✅ Removed label: autorelease: pending');
+              } catch (error) {
+                console.log('⚠️ Label "autorelease: pending" not found or already removed');
+              }
+
+              // Ajouter le label "autorelease: tagged"
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                labels: ['autorelease: tagged']
+              });
+              console.log('✅ Added label: autorelease: tagged');
+
+            } catch (error) {
+              core.warning(`Failed to update labels: ${error.message}`);
+            }
